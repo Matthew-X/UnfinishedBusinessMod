@@ -1,0 +1,15 @@
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\UnfinishedBusinessMod.csproj.AssemblyReference.cache
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\UnfinishedBusinessMod.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\UnfinishedBusinessMod.AssemblyInfoInputs.cache
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\UnfinishedBusinessMod.AssemblyInfo.cs
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\UnfinishedBusinessMod.csproj.CoreCompileInputs.cache
+E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\plugins\UnfinishedBusinessMod.deps.json
+E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\plugins\UnfinishedBusinessMod.dll
+E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\plugins\UnfinishedBusinessMod.pdb
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\UnfinishedBusinessMod.dll
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\refint\UnfinishedBusinessMod.dll
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\UnfinishedBusinessMod.pdb
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\ref\UnfinishedBusinessMod.dll
+E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\plugins\UnfinishedBusinessMod\UnfinishedBusinessMod.deps.json
+E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\plugins\UnfinishedBusinessMod\UnfinishedBusinessMod.dll
+E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\plugins\UnfinishedBusinessMod\UnfinishedBusinessMod.pdb

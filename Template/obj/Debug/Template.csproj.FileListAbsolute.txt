@@ -1,0 +1,5 @@
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\Template.csproj.AssemblyReference.cache
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\Template.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\Template.AssemblyInfoInputs.cache
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\Template.AssemblyInfo.cs
+D:\Documents\Mod Making\DRGS\UnfinishedBusinessMod\UnfinishedBusinessMod\Template\obj\Debug\Template.csproj.CoreCompileInputs.cache

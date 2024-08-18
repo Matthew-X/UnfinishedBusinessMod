@@ -1,0 +1,419 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <AssemblyName>UnfinishedBusinessMod</AssemblyName>
+        <Description>Unfinished Business Mod</Description>
+        <Version>0.1.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+    </PropertyGroup>
+
+  <Import Project="../zip.target" />
+  
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DefineConstants>TRACE;BepInEx_IL2CPP</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DefineConstants>TRACE;BepInEx_IL2CPP</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\core\0Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
+      <Reference Include="BepInEx.Core">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\core\BepInEx.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="BepInEx.Unity.IL2CPP">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+      </Reference>
+      <Reference Include="Cinemachine">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Cinemachine.dll</HintPath>
+      </Reference>
+      <Reference Include="com.rlabrecque.steamworks.net">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\com.rlabrecque.steamworks.net.dll</HintPath>
+      </Reference>
+      <Reference Include="DOTween">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\DOTween.dll</HintPath>
+      </Reference>
+      <Reference Include="FundayFactory.UI">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\FundayFactory.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="FundayGames.Audio">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\FundayGames.Audio.dll</HintPath>
+      </Reference>
+      <Reference Include="GameWorkstore.Google.Protobuf">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\GameWorkstore.Google.Protobuf.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppMono.Security">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppMono.Security.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2Cppmscorlib">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Configuration">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Configuration.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Core">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Data">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Data.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Net.Http">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Net.Http.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Numerics">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Numerics.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Runtime.CompilerServices.Unsafe">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Runtime.Serialization">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Runtime.Serialization.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Xml">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Xml.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSystem.Xml.Linq">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Il2CppSystem.Xml.Linq.dll</HintPath>
+      </Reference>
+      <Reference Include="LeTai.TranslucentImage">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\LeTai.TranslucentImage.dll</HintPath>
+      </Reference>
+      <Reference Include="LeTai.TranslucentImage.UniversalRP">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\LeTai.TranslucentImage.UniversalRP.dll</HintPath>
+      </Reference>
+      <Reference Include="Newtonsoft.Json">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Newtonsoft.Json.dll</HintPath>
+      </Reference>
+      <Reference Include="ScriptableObjectGuids">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\ScriptableObjectGuids.dll</HintPath>
+      </Reference>
+      <Reference Include="Tayx.Graphy">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Tayx.Graphy.dll</HintPath>
+      </Reference>
+      <Reference Include="UniTask">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UniTask.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Addressables">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Addressables.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.AI.Navigation">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.AI.Navigation.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Burst">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Burst.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Burst.Unsafe">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Burst.Unsafe.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Collections">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Collections.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Collections.LowLevel.ILSupport">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.InputSystem">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.InputSystem.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.InputSystem.ForUI">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.InputSystem.ForUI.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Localization">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Localization.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Mathematics">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Mathematics.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.ResourceManager">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.ResourceManager.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Analytics">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Analytics.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Configuration">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Configuration.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Device">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Device.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Environments">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Environments.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Environments.Internal">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Environments.Internal.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Internal">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Internal.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Registration">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Registration.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Scheduler">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Scheduler.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Telemetry">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Telemetry.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Services.Core.Threading">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Services.Core.Threading.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Splines">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Splines.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.TextMeshPro">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Timeline">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.Timeline.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.VisualEffectGraph.Runtime">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AccessibilityModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.AccessibilityModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AIModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.AIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AndroidJNIModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.AndroidJNIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AnimationModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.AnimationModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AssetBundleModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.AssetBundleModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AudioModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.AudioModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ClothModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ClothModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ClusterInputModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ClusterInputModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ClusterRendererModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ClusterRendererModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ContentLoadModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ContentLoadModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CrashReportingModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.CrashReportingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.DirectorModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.DirectorModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.DSPGraphModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.DSPGraphModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.GameCenterModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.GameCenterModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.GIModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.GIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.GridModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.GridModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.HotReloadModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.HotReloadModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ImageConversionModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ImageConversionModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.IMGUIModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.IMGUIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.InputLegacyModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.InputLegacyModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.InputModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.InputModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.JSONSerializeModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.JSONSerializeModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.LocalizationModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.LocalizationModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ParticleSystemModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ParticleSystemModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PerformanceReportingModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.Physics2DModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.Physics2DModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PhysicsModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ProfilerModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ProfilerModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PropertiesModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.PropertiesModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ScreenCaptureModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SharedInternalsModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.SharedInternalsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SpriteMaskModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.SpriteMaskModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SpriteShapeModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.SpriteShapeModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.StreamingModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.StreamingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SubstanceModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.SubstanceModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.SubsystemsModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.SubsystemsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TerrainModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.TerrainModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TerrainPhysicsModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TextCoreFontEngineModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TextCoreTextEngineModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TextRenderingModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.TextRenderingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TilemapModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.TilemapModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TLSModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.TLSModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIElementsModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UIElementsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UmbraModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UmbraModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityAnalyticsModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityConnectModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityConnectModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityCurlModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityCurlModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityTestProtocolModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VehiclesModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.VehiclesModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VFXModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.VFXModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VideoModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.VideoModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VirtualTexturingModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.VirtualTexturingModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VRModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.VRModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.WindModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.WindModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.XRModule">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\UnityEngine.XRModule.dll</HintPath>
+      </Reference>
+      <Reference Include="Zenject">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Zenject.dll</HintPath>
+      </Reference>
+      <Reference Include="Zenject-usage">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\Zenject-usage.dll</HintPath>
+      </Reference>
+      <Reference Include="__Generated">
+        <HintPath>E:\Programs\Steam\steamapps\common\Deep Rock Survivor\BepInEx\interop\__Generated.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+   
+</Project>
